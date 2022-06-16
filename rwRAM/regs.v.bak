@@ -1,0 +1,37 @@
+module regs(
+input clk,
+input rst,
+input	reg1_raddr_i,
+input	reg2_raddr_i,
+
+output  reg[31:0] reg1_rdata_o,
+output  reg[31:0] reg2_rdata_o,
+
+input	  [4:0]reg_waddr_i,
+input	  [31:0]reg_wdata_i
+
+
+);
+	reg[31:0] regs[0:31];
+		
+always @(*)begin
+	if(~rst)
+		reg1_rdata_o<=32'b0;
+	else if(reg1_raddr_i ==5'b0)
+		reg1_rdata_o <= 32'b0;
+	else 
+		reg1_rdata_o<=regs[reg1_raddr_i];
+end
+
+always @(*)begin
+	if(~rst)
+		reg2_rdata_o<=32'b0;
+	else if(reg2_raddr_i ==5'b0)
+		reg2_rdata_o <= 32'b0;
+	else 
+		reg2_rdata_o<=regs[reg2_raddr_i];
+end
+
+
+
+endmodule

@@ -1,0 +1,198 @@
+Determining the location of the ModelSim executable...
+
+Using: D:\intelFPGA_lite\17.1\modelsim_ase\win32aloem
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RISC -c RISC --vector_source="D:/intelFPGA_lite/17.1/MCU/RISC/Waveform1.vwf" --testbench_file="D:/intelFPGA_lite/17.1/MCU/RISC/simulation/qsim/Waveform1.vwf.vt"
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details.
+    Info: Processing started: Mon May 09 09:49:46 2022
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RISC -c RISC --vector_source=D:/intelFPGA_lite/17.1/MCU/RISC/Waveform1.vwf --testbench_file=D:/intelFPGA_lite/17.1/MCU/RISC/simulation/qsim/Waveform1.vwf.vt
+Info (119006): Selected device 5CGXFC7C7F23C8 for design "RISC"
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+Completed successfully. 
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/intelFPGA_lite/17.1/MCU/RISC/simulation/qsim/" RISC -c RISC
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details.
+    Info: Processing started: Mon May 09 09:49:48 2022
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/intelFPGA_lite/17.1/MCU/RISC/simulation/qsim/ RISC -c RISC
+Info (119006): Selected device 5CGXFC7C7F23C8 for design "RISC"
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file RISC.vo in folder "D:/intelFPGA_lite/17.1/MCU/RISC/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4718 megabytes
+    Info: Processing ended: Mon May 09 09:49:48 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+D:/intelFPGA_lite/17.1/MCU/RISC/simulation/qsim/RISC.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+D:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/vsim -c -do RISC.do
+
+Reading D:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+
+# do RISC.do
+
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:49:50 on May 09,2022
+# vlog -work work RISC.vo 
+
+# -- Compiling module RISC
+# 
+# Top level modules:
+# 	RISC
+# End time: 09:49:50 on May 09,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:49:50 on May 09,2022
+# vlog -work work Waveform1.vwf.vt 
+# -- Compiling module RISC_vlg_vec_tst
+# 
+# Top level modules:
+# 	RISC_vlg_vec_tst
+# End time: 09:49:50 on May 09,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+# after#1
+Error: can't read "FileWatch(fileName)": no such element in array
+
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading D:/intelFPGA_lite/17.1/MCU/RISC/Waveform1.vwf...
+
+Reading D:/intelFPGA_lite/17.1/MCU/RISC/simulation/qsim/RISC.msim.vcd...
+
+Processing channel transitions... 
+
+Warning: branch - signal not found in VCD.
+
+Warning: imm[31] - signal not found in VCD.
+
+Warning: imm[30] - signal not found in VCD.
+
+Warning: imm[29] - signal not found in VCD.
+
+Warning: imm[28] - signal not found in VCD.
+
+Warning: imm[27] - signal not found in VCD.
+
+Warning: imm[26] - signal not found in VCD.
+
+Warning: imm[25] - signal not found in VCD.
+
+Warning: imm[24] - signal not found in VCD.
+
+Warning: imm[23] - signal not found in VCD.
+
+Warning: imm[22] - signal not found in VCD.
+
+Warning: imm[21] - signal not found in VCD.
+
+Warning: imm[20] - signal not found in VCD.
+
+Warning: imm[19] - signal not found in VCD.
+
+Warning: imm[18] - signal not found in VCD.
+
+Warning: imm[17] - signal not found in VCD.
+
+Warning: imm[16] - signal not found in VCD.
+
+Warning: imm[15] - signal not found in VCD.
+
+Warning: imm[14] - signal not found in VCD.
+
+Warning: imm[13] - signal not found in VCD.
+
+Warning: imm[12] - signal not found in VCD.
+
+Warning: imm[11] - signal not found in VCD.
+
+Warning: imm[10] - signal not found in VCD.
+
+Warning: imm[9] - signal not found in VCD.
+
+Warning: imm[8] - signal not found in VCD.
+
+Warning: imm[7] - signal not found in VCD.
+
+Warning: imm[6] - signal not found in VCD.
+
+Warning: imm[5] - signal not found in VCD.
+
+Warning: imm[4] - signal not found in VCD.
+
+Warning: imm[3] - signal not found in VCD.
+
+Warning: imm[2] - signal not found in VCD.
+
+Warning: imm[1] - signal not found in VCD.
+
+Warning: imm[0] - signal not found in VCD.
+
+Warning: jump - signal not found in VCD.
+
+Warning: zero - signal not found in VCD.
+
+Writing the resulting VWF to D:/intelFPGA_lite/17.1/MCU/RISC/simulation/qsim/RISC_20220509094951.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

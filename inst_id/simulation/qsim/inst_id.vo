@@ -1,0 +1,160 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition"
+
+// DATE "04/27/2022 21:06:59"
+
+// 
+// Device: Altera 5CGXFC7C7F23C8 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module inst_id (
+	q,
+	S,
+	CLK,
+	qn);
+output 	q;
+input 	S;
+input 	CLK;
+output 	qn;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \q~output_o ;
+wire \qn~output_o ;
+wire \S~input_o ;
+wire \CLK~input_o ;
+wire \inst~combout ;
+wire \inst1~combout ;
+
+
+cyclonev_io_obuf \q~output (
+	.i(!\inst~combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\q~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \q~output .bus_hold = "false";
+defparam \q~output .open_drain_output = "false";
+defparam \q~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \qn~output (
+	.i(\inst1~combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\qn~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \qn~output .bus_hold = "false";
+defparam \qn~output .open_drain_output = "false";
+defparam \qn~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_ibuf \S~input (
+	.i(S),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\S~input_o ));
+// synopsys translate_off
+defparam \S~input .bus_hold = "false";
+defparam \S~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \CLK~input (
+	.i(CLK),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\CLK~input_o ));
+// synopsys translate_off
+defparam \CLK~input .bus_hold = "false";
+defparam \CLK~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb inst(
+// Equation(s):
+// \inst~combout  = (\inst~combout  & ((!\S~input_o ) # (!\CLK~input_o )))
+
+	.dataa(!\inst~combout ),
+	.datab(!\S~input_o ),
+	.datac(!\CLK~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam inst.extended_lut = "off";
+defparam inst.lut_mask = 64'h5454545454545454;
+defparam inst.shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb inst1(
+// Equation(s):
+// \inst1~combout  = ((\S~input_o  & \CLK~input_o )) # (\inst~combout )
+
+	.dataa(!\inst~combout ),
+	.datab(!\S~input_o ),
+	.datac(!\CLK~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst1~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam inst1.extended_lut = "off";
+defparam inst1.lut_mask = 64'h5757575757575757;
+defparam inst1.shared_arith = "off";
+// synopsys translate_on
+
+assign q = \q~output_o ;
+
+assign qn = \qn~output_o ;
+
+endmodule

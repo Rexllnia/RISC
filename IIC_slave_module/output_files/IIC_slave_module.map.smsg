@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at IIC_slave_module.v(60): always construct contains both blocking and non-blocking assignments File: D:/intelFPGA_lite/17.1/MCU/IIC_slave_module/IIC_slave_module.v Line: 60

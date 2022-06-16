@@ -1,0 +1,321 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "04/30/2022 23:37:45"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          rwRAM
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module rwRAM_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg [31:0] inst_i;
+reg rst;
+// wires                                               
+wire [31:0] inst__o;
+wire [31:0] inst_addr_o;
+wire [31:0] op1_o;
+wire [31:0] op2_o;
+wire [4:0] rd_addr_o;
+wire [31:0] rd_data_out;
+wire [31:0] reg1_rdata_o;
+wire [31:0] reg2_rdata_o;
+wire [4:0] rs1_addr_o;
+wire [4:0] rs2_addr_o;
+
+// assign statements (if any)                          
+rwRAM i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.inst__o(inst__o),
+	.inst_addr_o(inst_addr_o),
+	.inst_i(inst_i),
+	.op1_o(op1_o),
+	.op2_o(op2_o),
+	.rd_addr_o(rd_addr_o),
+	.rd_data_out(rd_data_out),
+	.reg1_rdata_o(reg1_rdata_o),
+	.reg2_rdata_o(reg2_rdata_o),
+	.rs1_addr_o(rs1_addr_o),
+	.rs2_addr_o(rs2_addr_o),
+	.rst(rst)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #25000 1'b1;
+	#25000;
+end 
+// inst_i[ 31 ]
+initial
+begin
+	inst_i[31] = 1'b0;
+end 
+// inst_i[ 30 ]
+initial
+begin
+	inst_i[30] = 1'b0;
+end 
+// inst_i[ 29 ]
+initial
+begin
+	inst_i[29] = 1'b0;
+end 
+// inst_i[ 28 ]
+initial
+begin
+	inst_i[28] = 1'b0;
+end 
+// inst_i[ 27 ]
+initial
+begin
+	inst_i[27] = 1'b0;
+end 
+// inst_i[ 26 ]
+initial
+begin
+	inst_i[26] = 1'b0;
+end 
+// inst_i[ 25 ]
+initial
+begin
+	inst_i[25] = 1'b0;
+	inst_i[25] = #300000 1'b1;
+	inst_i[25] = #160000 1'b0;
+end 
+// inst_i[ 24 ]
+initial
+begin
+	inst_i[24] = 1'b0;
+end 
+// inst_i[ 23 ]
+initial
+begin
+	inst_i[23] = 1'b0;
+end 
+// inst_i[ 22 ]
+initial
+begin
+	inst_i[22] = 1'b0;
+	inst_i[22] = #100000 1'b1;
+	inst_i[22] = #80000 1'b0;
+	inst_i[22] = #10000 1'b1;
+	inst_i[22] = #80000 1'b0;
+	inst_i[22] = #30000 1'b1;
+	inst_i[22] = #160000 1'b0;
+end 
+// inst_i[ 21 ]
+initial
+begin
+	inst_i[21] = 1'b0;
+	inst_i[21] = #10000 1'b1;
+	inst_i[21] = #80000 1'b0;
+	inst_i[21] = #10000 1'b1;
+	inst_i[21] = #80000 1'b0;
+	inst_i[21] = #120000 1'b1;
+	inst_i[21] = #160000 1'b0;
+end 
+// inst_i[ 20 ]
+initial
+begin
+	inst_i[20] = 1'b0;
+	inst_i[20] = #10000 1'b1;
+	inst_i[20] = #80000 1'b0;
+	inst_i[20] = #10000 1'b1;
+	inst_i[20] = #80000 1'b0;
+	inst_i[20] = #120000 1'b1;
+	inst_i[20] = #160000 1'b0;
+end 
+// inst_i[ 19 ]
+initial
+begin
+	inst_i[19] = 1'b0;
+end 
+// inst_i[ 18 ]
+initial
+begin
+	inst_i[18] = 1'b0;
+end 
+// inst_i[ 17 ]
+initial
+begin
+	inst_i[17] = 1'b0;
+	inst_i[17] = #190000 1'b1;
+	inst_i[17] = #80000 1'b0;
+end 
+// inst_i[ 16 ]
+initial
+begin
+	inst_i[16] = 1'b0;
+	inst_i[16] = #190000 1'b1;
+	inst_i[16] = #80000 1'b0;
+end 
+// inst_i[ 15 ]
+initial
+begin
+	inst_i[15] = 1'b0;
+	inst_i[15] = #10000 1'b1;
+	inst_i[15] = #80000 1'b0;
+	inst_i[15] = #10000 1'b1;
+	inst_i[15] = #80000 1'b0;
+	inst_i[15] = #10000 1'b1;
+	inst_i[15] = #80000 1'b0;
+	inst_i[15] = #30000 1'b1;
+	inst_i[15] = #160000 1'b0;
+end 
+// inst_i[ 14 ]
+initial
+begin
+	inst_i[14] = 1'b0;
+end 
+// inst_i[ 13 ]
+initial
+begin
+	inst_i[13] = 1'b0;
+end 
+// inst_i[ 12 ]
+initial
+begin
+	inst_i[12] = 1'b0;
+	inst_i[12] = #300000 1'b1;
+	inst_i[12] = #160000 1'b0;
+end 
+// inst_i[ 11 ]
+initial
+begin
+	inst_i[11] = 1'b0;
+	inst_i[11] = #300000 1'b1;
+	inst_i[11] = #160000 1'b0;
+end 
+// inst_i[ 10 ]
+initial
+begin
+	inst_i[10] = 1'b0;
+	inst_i[10] = #300000 1'b1;
+	inst_i[10] = #160000 1'b0;
+end 
+// inst_i[ 9 ]
+initial
+begin
+	inst_i[9] = 1'b0;
+	inst_i[9] = #10000 1'b1;
+	inst_i[9] = #80000 1'b0;
+	inst_i[9] = #210000 1'b1;
+	inst_i[9] = #160000 1'b0;
+end 
+// inst_i[ 8 ]
+initial
+begin
+	inst_i[8] = 1'b0;
+	inst_i[8] = #10000 1'b1;
+	inst_i[8] = #80000 1'b0;
+	inst_i[8] = #100000 1'b1;
+	inst_i[8] = #80000 1'b0;
+end 
+// inst_i[ 7 ]
+initial
+begin
+	inst_i[7] = 1'b0;
+	inst_i[7] = #10000 1'b1;
+	inst_i[7] = #80000 1'b0;
+	inst_i[7] = #10000 1'b1;
+	inst_i[7] = #80000 1'b0;
+	inst_i[7] = #10000 1'b1;
+	inst_i[7] = #80000 1'b0;
+end 
+// inst_i[ 6 ]
+initial
+begin
+	inst_i[6] = 1'b0;
+	inst_i[6] = #300000 1'b1;
+	inst_i[6] = #160000 1'b0;
+end 
+// inst_i[ 5 ]
+initial
+begin
+	inst_i[5] = 1'b0;
+	inst_i[5] = #300000 1'b1;
+	inst_i[5] = #160000 1'b0;
+end 
+// inst_i[ 4 ]
+initial
+begin
+	inst_i[4] = 1'b0;
+	inst_i[4] = #10000 1'b1;
+	inst_i[4] = #80000 1'b0;
+	inst_i[4] = #10000 1'b1;
+	inst_i[4] = #80000 1'b0;
+	inst_i[4] = #10000 1'b1;
+	inst_i[4] = #80000 1'b0;
+end 
+// inst_i[ 3 ]
+initial
+begin
+	inst_i[3] = 1'b0;
+end 
+// inst_i[ 2 ]
+initial
+begin
+	inst_i[2] = 1'b0;
+end 
+// inst_i[ 1 ]
+initial
+begin
+	inst_i[1] = 1'b0;
+	inst_i[1] = #10000 1'b1;
+	inst_i[1] = #80000 1'b0;
+	inst_i[1] = #10000 1'b1;
+	inst_i[1] = #80000 1'b0;
+	inst_i[1] = #10000 1'b1;
+	inst_i[1] = #80000 1'b0;
+	inst_i[1] = #30000 1'b1;
+	inst_i[1] = #160000 1'b0;
+end 
+// inst_i[ 0 ]
+initial
+begin
+	inst_i[0] = 1'b0;
+	inst_i[0] = #10000 1'b1;
+	inst_i[0] = #80000 1'b0;
+	inst_i[0] = #10000 1'b1;
+	inst_i[0] = #80000 1'b0;
+	inst_i[0] = #10000 1'b1;
+	inst_i[0] = #80000 1'b0;
+	inst_i[0] = #30000 1'b1;
+	inst_i[0] = #160000 1'b0;
+end 
+
+// rst
+initial
+begin
+	rst = 1'b1;
+end 
+endmodule
+

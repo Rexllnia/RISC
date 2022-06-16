@@ -1,0 +1,16 @@
+module dff_set(clk,reset,d,q,qb);
+input clk,reset,d;
+output q,qb;
+reg q,qb;
+always @(posedge clk or negedge reset)
+		begin if(!reset) begin
+			q<=0;
+			qb<=1;
+		end
+		else 
+		begin
+			q<=d;
+			qb<=~d;
+		end 
+	end
+endmodule

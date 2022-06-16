@@ -1,0 +1,20 @@
+module mux_pc(
+	input ena,
+	input branch,
+	input	zero,
+	input	jump,
+	input	[31:0]	imm,
+	input	[31:0]	curr_pc,
+	output reg[31:0]	next_pc
+);
+always @(*) begin
+	if(~ena)
+		next_pc = curr_pc;
+	else if(branch && ~zero)
+		next_pc=curr_pc+imm;
+	else if(jump)
+		next_pc=curr_pc+imm;
+	else
+		next_pc=curr_pc+32'h4;
+end
+endmodule

@@ -1,0 +1,11 @@
+module ex(
+input [31:0] inst_i,
+input [31:0] inst_addr_i,
+input [31:0] opcode1_i,
+input [31:0] opcode2_i,
+input [4:0]  rd_addr_i,
+output reg[4:0] rd_addr_o,
+output reg[4:0] rd_data_o,
+output reg rd_write_en
+
+);

@@ -1,0 +1,15 @@
+module inst_id(
+	input [31:0] inst_i;
+	input	[31:0]	inst_addr_i;
+	output reg[4:0] rs1_addr_o;
+	output reg[4:0] rs2_addr_o;
+	input	[31:0] rs1_data_i;
+	input	[31:0] rs2_data_i;
+	output reg[31:0] inst_o;
+	output reg[31:0] inst_addr_o;
+	output reg[31:0]	opcode1_o;
+	output reg[31:0]	opcode2_o;
+	output reg[31:0]	rd_addr_o;
+	
+);
+endmodule

@@ -1,0 +1,41 @@
+|IIC_slave_module
+SDA <> SDA
+SCL => SDAr~reg0.CLK
+SCL => mem[0]~reg0.CLK
+SCL => mem[1]~reg0.CLK
+SCL => mem[2]~reg0.CLK
+SCL => mem[3]~reg0.CLK
+SCL => mem[4]~reg0.CLK
+SCL => mem[5]~reg0.CLK
+SCL => mem[6]~reg0.CLK
+SCL => mem[7]~reg0.CLK
+SCL => op_read~reg0.CLK
+SCL => adr_match~reg0.CLK
+SCL => got_ACK~reg0.CLK
+SCL => bitcnt[0]~reg0.CLK
+SCL => bitcnt[1]~reg0.CLK
+SCL => bitcnt[2]~reg0.CLK
+SCL => bitcnt[3]~reg0.CLK
+SCL => incycle~reg0.CLK
+SCL => start_or_stop.OUTPUTSELECT
+SCL => SDA_shadow.IN1
+incycle <= incycle~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bitcnt[0] <= bitcnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bitcnt[1] <= bitcnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bitcnt[2] <= bitcnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bitcnt[3] <= bitcnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_phase <= <GND>
+adr_match <= adr_match~reg0.DB_MAX_OUTPUT_PORT_TYPE
+op_read <= op_read~reg0.DB_MAX_OUTPUT_PORT_TYPE
+got_ACK <= got_ACK~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mem[0] <= mem[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mem[1] <= mem[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mem[2] <= mem[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mem[3] <= mem[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mem[4] <= mem[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mem[5] <= mem[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mem[6] <= mem[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mem[7] <= mem[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SDAr <= SDAr~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

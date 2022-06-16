@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, D:/intelFPGA_lite/17.1/inst_id/inst_id.bdf
+source_file = 1, D:/intelFPGA_lite/17.1/inst_id/Waveform.vwf
+source_file = 1, D:/intelFPGA_lite/17.1/inst_id/db/inst_id.cbx.xml
+design_name = inst_id
+instance = comp, \q~output , q~output, inst_id, 1
+instance = comp, \qn~output , qn~output, inst_id, 1
+instance = comp, \S~input , S~input, inst_id, 1
+instance = comp, \CLK~input , CLK~input, inst_id, 1

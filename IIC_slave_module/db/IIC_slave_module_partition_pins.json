@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "incycle",
+					"strict" : false
+				},
+				{
+					"name" : "bitcnt[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bitcnt[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bitcnt[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bitcnt[3]",
+					"strict" : false
+				},
+				{
+					"name" : "adr_match",
+					"strict" : false
+				},
+				{
+					"name" : "op_read",
+					"strict" : false
+				},
+				{
+					"name" : "got_ACK",
+					"strict" : false
+				},
+				{
+					"name" : "SDAr",
+					"strict" : false
+				},
+				{
+					"name" : "SDA",
+					"strict" : false
+				},
+				{
+					"name" : "SCL",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

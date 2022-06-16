@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/17.1/MCU/rom/simulation/qsim
+vrom
+Z1 !s110 1651145589
+!i10b 1
+!s100 ACT1MR=nk[CfCTRjolnYS2
+I2V2IAnJI6W^2HfWH`WY3Q1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1651145588
+8rom.vo
+From.vo
+L0 31
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1651145589.000000
+!s107 rom.vo|
+!s90 -work|work|rom.vo|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vrom_vlg_vec_tst
+R1
+!i10b 1
+!s100 JR02_`cnTU:E2GoNc4il:2
+IC?FbCMmd[zeAQS^iXbUj]1
+R2
+R0
+R3
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R4
+r1
+!s85 0
+31
+R5
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R6
+R7

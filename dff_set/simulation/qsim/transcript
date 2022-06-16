@@ -1,0 +1,20 @@
+# do dff_set.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:28:38 on Apr 27,2022
+# vlog -work work dff_set.vo 
+# -- Compiling module dff_set
+# 
+# Top level modules:
+# 	dff_set
+# End time: 21:28:38 on Apr 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:28:38 on Apr 27,2022
+# vlog -work work Waveform1.vwf.vt 
+# -- Compiling module dff_set_vlg_vec_tst
+# 
+# Top level modules:
+# 	dff_set_vlg_vec_tst
+# End time: 21:28:38 on Apr 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# after#1

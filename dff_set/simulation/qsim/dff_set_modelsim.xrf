@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, D:/intelFPGA_lite/17.1/MCU/dff_set/dff_set.v
+source_file = 1, D:/intelFPGA_lite/17.1/MCU/dff_set/Waveform.vwf
+source_file = 1, D:/intelFPGA_lite/17.1/MCU/dff_set/db/dff_set.cbx.xml
+design_name = dff_set
+instance = comp, \q~output , q~output, dff_set, 1
+instance = comp, \qb~output , qb~output, dff_set, 1
+instance = comp, \clk~input , clk~input, dff_set, 1
+instance = comp, \clk~inputCLKENA0 , clk~inputCLKENA0, dff_set, 1
+instance = comp, \d~input , d~input, dff_set, 1
+instance = comp, \q~reg0feeder , q~reg0feeder, dff_set, 1
+instance = comp, \reset~input , reset~input, dff_set, 1
+instance = comp, \q~reg0 , q~reg0, dff_set, 1
+instance = comp, \qb~reg0feeder , qb~reg0feeder, dff_set, 1
+instance = comp, \qb~reg0 , qb~reg0, dff_set, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, dff_set, 1

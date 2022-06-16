@@ -1,0 +1,621 @@
+Analysis & Synthesis report for ex
+Sat Apr 30 22:44:12 2022
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Apr 30 22:44:12 2022       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; ex                                          ;
+; Top-level Entity Name           ; ex                                          ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 205                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; ex                 ; ex                 ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path       ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+; ex.v                             ; yes             ; User Verilog HDL File  ; D:/intelFPGA_lite/17.1/MCU/ex/ex.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimate of Logic utilization (ALMs needed) ; 138           ;
+;                                             ;               ;
+; Combinational ALUT usage for logic          ; 260           ;
+;     -- 7 input functions                    ; 0             ;
+;     -- 6 input functions                    ; 15            ;
+;     -- 5 input functions                    ; 35            ;
+;     -- 4 input functions                    ; 8             ;
+;     -- <=3 input functions                  ; 202           ;
+;                                             ;               ;
+; Dedicated logic registers                   ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 205           ;
+;                                             ;               ;
+; Total DSP Blocks                            ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; Selector135~0 ;
+; Maximum fan-out                             ; 38            ;
+; Total fan-out                               ; 1125          ;
+; Average fan-out                             ; 1.68          ;
++---------------------------------------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |ex                        ; 260 (260)           ; 0 (0)                     ; 0                 ; 0          ; 205  ; 0            ; |ex                 ; ex          ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; rd_addr_o[0]$latch                                  ; Selector105         ; yes                    ;
+; rd_addr_o[1]$latch                                  ; Selector105         ; yes                    ;
+; rd_addr_o[2]$latch                                  ; Selector105         ; yes                    ;
+; rd_addr_o[3]$latch                                  ; Selector105         ; yes                    ;
+; rd_addr_o[4]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[0]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[1]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[2]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[3]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[4]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[5]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[6]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[7]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[8]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[9]$latch                                  ; Selector105         ; yes                    ;
+; rd_data_o[10]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[11]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[12]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[13]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[14]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[15]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[16]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[17]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[18]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[19]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[20]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[21]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[22]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[23]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[24]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[25]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[26]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[27]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[28]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[29]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[30]$latch                                 ; Selector105         ; yes                    ;
+; rd_data_o[31]$latch                                 ; Selector105         ; yes                    ;
+; rd_write_en$latch                                   ; Selector105         ; yes                    ;
+; jump_addr_o[0]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[1]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[2]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[3]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[4]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[5]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[6]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[7]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[8]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[9]$latch                                ; Decoder0            ; yes                    ;
+; jump_addr_o[10]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[11]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[12]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[13]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[14]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[15]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[16]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[17]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[18]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[19]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[20]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[21]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[22]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[23]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[24]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[25]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[26]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[27]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[28]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[29]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[30]$latch                               ; Decoder0            ; yes                    ;
+; jump_addr_o[31]$latch                               ; Decoder0            ; yes                    ;
+; jump_en_o$latch                                     ; Decoder0            ; yes                    ;
+; Number of user-specified and inferred latches = 71  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 129:1              ; 32 bits   ; 2752 LEs      ; 320 LEs              ; 2432 LEs               ; No         ; |ex|Selector135            ;
+; 130:1              ; 5 bits    ; 430 LEs       ; 50 LEs               ; 380 LEs                ; No         ; |ex|Selector101            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 261                         ;
+;     arith             ; 63                          ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 44                          ;
+;     normal            ; 166                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 8                           ;
+;         5 data inputs ; 35                          ;
+;         6 data inputs ; 15                          ;
+;     shared            ; 32                          ;
+;         2 data inputs ; 32                          ;
+; boundary_port         ; 205                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.10                        ;
+; Average LUT depth     ; 4.33                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Sat Apr 30 22:44:04 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ex -c ex
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file ex.v
+    Info (12023): Found entity 1: ex File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 1
+Info (12127): Elaborating entity "ex" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at ex.v(18): object "rd" assigned a value but never read File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 18
+Warning (10036): Verilog HDL or VHDL warning at ex.v(20): object "rs1" assigned a value but never read File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 20
+Warning (10036): Verilog HDL or VHDL warning at ex.v(21): object "rs2" assigned a value but never read File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 21
+Warning (10036): Verilog HDL or VHDL warning at ex.v(22): object "imm" assigned a value but never read File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 22
+Warning (10230): Verilog HDL assignment warning at ex.v(33): truncated value with size 33 to match size of target (32) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 33
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "rd_data_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "rd_addr_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "rd_write_en", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "jump_addr_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "jump_en_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "hold_flag_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "hold_flag_o" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_en_o" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[0]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[1]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[2]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[3]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[4]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[5]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[6]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[7]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[8]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[9]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[10]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[11]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[12]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[13]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[14]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[15]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[16]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[17]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[18]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[19]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[20]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[21]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[22]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[23]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[24]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[25]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[26]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[27]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[28]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[29]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[30]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[31]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_write_en" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[0]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[1]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[2]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[3]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[4]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[0]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[1]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[2]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[3]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[4]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[5]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[6]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[7]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[8]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[9]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[10]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[11]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[12]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[13]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[14]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[15]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[16]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[17]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[18]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[19]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[20]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[21]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[22]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[23]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[24]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[25]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[26]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[27]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[28]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[29]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[30]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[31]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+Warning (13012): Latch rd_addr_o[0]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[2] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_addr_o[1]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[2] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_addr_o[2]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[2] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_addr_o[3]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[2] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_addr_o[4]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[2] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[0]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[1]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[2]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[3]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[4]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[5]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[6]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[7]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[8]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[9]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[10]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[11]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[12]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[13]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[14]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[15]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[16]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[17]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[18]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[19]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[20]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[21]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[22]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[23]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[24]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[25]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[26]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[27]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[28]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[29]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[30]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_data_o[31]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[5] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch rd_write_en$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[2] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[0]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[1]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[2]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[3]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[4]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[5]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[6]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[7]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[8]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[9]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[10]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[11]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[12]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[13]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[14]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[15]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[16]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[17]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[18]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[19]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[20]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[21]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[22]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[23]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[24]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[25]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[26]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[27]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[28]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[29]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[30]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_addr_o[31]$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13012): Latch jump_en_o$latch has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal inst_i[0] File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "hold_flag_o" is stuck at GND File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "inst_i[15]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+    Warning (15610): No output dependent on input pin "inst_i[16]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+    Warning (15610): No output dependent on input pin "inst_i[17]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+    Warning (15610): No output dependent on input pin "inst_i[18]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+    Warning (15610): No output dependent on input pin "inst_i[19]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+    Warning (15610): No output dependent on input pin "inst_i[20]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+    Warning (15610): No output dependent on input pin "inst_i[21]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+    Warning (15610): No output dependent on input pin "inst_i[22]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+    Warning (15610): No output dependent on input pin "inst_i[23]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+    Warning (15610): No output dependent on input pin "inst_i[24]" File: D:/intelFPGA_lite/17.1/MCU/ex/ex.v Line: 2
+Info (21057): Implemented 465 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 133 input pins
+    Info (21059): Implemented 72 output pins
+    Info (21061): Implemented 260 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 167 warnings
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Sat Apr 30 22:44:12 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
+
+

@@ -1,0 +1,7 @@
+module pc_reg(
+input clk,
+input rst
+output reg[31:0] pc_o
+)
+
+endmodule

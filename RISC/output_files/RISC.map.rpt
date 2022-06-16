@@ -1,0 +1,1827 @@
+Analysis & Synthesis report for RISC
+Sun May 01 11:51:59 2022
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun May 01 11:51:59 2022       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; RISC                                        ;
+; Top-level Entity Name           ; RISC                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 160                                         ;
+; Total pins                      ; 212                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; RISC               ; RISC               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                        ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path              ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------+---------+
+; RISC.bdf                         ; yes             ; User Block Diagram/Schematic File  ; D:/intelFPGA_lite/17.1/MCU/RISC/RISC.bdf  ;         ;
+; pc_reg.v                         ; yes             ; Auto-Found Verilog HDL File        ; D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v  ;         ;
+; mux_pc.v                         ; yes             ; Auto-Found Verilog HDL File        ; D:/intelFPGA_lite/17.1/MCU/RISC/mux_pc.v  ;         ;
+; ex.v                             ; yes             ; Auto-Found Verilog HDL File        ; D:/intelFPGA_lite/17.1/MCU/RISC/ex.v      ;         ;
+; inst_id.v                        ; yes             ; Auto-Found Verilog HDL File        ; D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v ;         ;
+; rom.v                            ; yes             ; Auto-Found Verilog HDL File        ; D:/intelFPGA_lite/17.1/MCU/RISC/rom.v     ;         ;
+; regs.v                           ; yes             ; Auto-Found Verilog HDL File        ; D:/intelFPGA_lite/17.1/MCU/RISC/regs.v    ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 223       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 348       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 86        ;
+;     -- 5 input functions                    ; 38        ;
+;     -- 4 input functions                    ; 16        ;
+;     -- <=3 input functions                  ; 208       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 160       ;
+;                                             ;           ;
+; I/O pins                                    ; 212       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 199       ;
+; Total fan-out                               ; 2387      ;
+; Average fan-out                             ; 2.56      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |RISC                      ; 348 (0)             ; 160 (0)                   ; 0                 ; 0          ; 212  ; 0            ; |RISC               ; RISC        ; work         ;
+;    |ex:inst9|              ; 179 (179)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RISC|ex:inst9      ; ex          ; work         ;
+;    |inst_id:inst5|         ; 109 (109)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RISC|inst_id:inst5 ; inst_id     ; work         ;
+;    |mux_pc:inst10|         ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RISC|mux_pc:inst10 ; mux_pc      ; work         ;
+;    |pc_reg:inst2|          ; 1 (1)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |RISC|pc_reg:inst2  ; pc_reg      ; work         ;
+;    |regs:inst3|            ; 10 (10)             ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |RISC|regs:inst3    ; regs        ; work         ;
+;    |rom:inst|              ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RISC|rom:inst      ; rom         ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; ex:inst9|rd_data_o[0]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_write_en                                ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_addr_o[1]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_addr_o[3]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_addr_o[0]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_addr_o[2]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[1]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[2]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[3]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[4]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[5]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[6]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[7]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[8]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[9]                               ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[10]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[11]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[12]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[13]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[14]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[15]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[16]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[17]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[18]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[19]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[20]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[21]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[22]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[23]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[24]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[25]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[26]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[27]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[28]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[29]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[30]                              ; ex:inst9|Decoder0   ; yes                    ;
+; ex:inst9|rd_data_o[31]                              ; ex:inst9|Decoder0   ; yes                    ;
+; Number of user-specified and inferred latches = 37  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; pc_reg:inst2|curr_pc[0]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[31][31]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][30]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][29]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][28]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][27]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][26]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][25]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][24]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][23]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][22]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][21]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][20]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][19]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][18]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][17]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][16]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][15]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][14]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][13]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][12]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][11]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][10]                 ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][9]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][8]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][7]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][6]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][5]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][4]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][3]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][2]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][1]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[31][0]                  ; Stuck at GND due to stuck port clock_enable ;
+; regs:inst3|regs[16][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][31]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][30]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][29]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][28]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][27]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][26]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][25]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][24]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][23]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][22]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][21]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][20]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][19]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][18]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][17]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][16]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][15]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[16][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[17][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[18][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[19][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[20][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[21][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[22][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[23][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[24][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[25][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[26][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[27][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[28][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[29][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[30][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][31]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][30]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][29]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][28]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][27]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][26]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][25]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][24]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][23]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][22]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][21]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][20]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][19]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][18]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][17]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][16]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][15]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][14]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][13]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][12]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][11]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][10]                  ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][9]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][8]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][7]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][6]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][5]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][4]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][3]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][2]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][1]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[0][0]                   ; Stuck at GND due to stuck port data_in      ;
+; regs:inst3|regs[10][31]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][31]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][31]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][31]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][31]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][31]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][31]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][31]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][30]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][30]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][30]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][30]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][30]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][30]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][30]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][30]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][29]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][29]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][29]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][29]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][29]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][29]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][29]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][29]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][28]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][28]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][28]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][28]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][28]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][28]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][28]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][28]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][27]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][27]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][27]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][27]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][27]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][27]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][27]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][27]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][26]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][26]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][26]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][26]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][26]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][26]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][26]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][26]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][25]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][25]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][25]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][25]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][25]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][25]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][25]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][25]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][24]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][24]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][24]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][24]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][24]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][24]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][24]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][24]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][23]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][23]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][23]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][23]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][23]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][23]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][23]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][23]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][22]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][22]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][22]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][22]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][22]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][22]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][22]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][22]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][21]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][21]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][21]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][21]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][21]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][21]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][21]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][21]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][20]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][20]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][20]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][20]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][20]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][20]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][20]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][20]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][19]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][19]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][19]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][19]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][19]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][19]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][19]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][19]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][18]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][18]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][18]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][18]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][18]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][18]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][18]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][18]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][17]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][17]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][17]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][17]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][17]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][17]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][17]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][17]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][16]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][16]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][16]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][16]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][16]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][16]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][16]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][16]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][15]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][15]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][15]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][15]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][15]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][15]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][15]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][15]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][14]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][14]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][14]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][14]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][14]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][14]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][14]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][14]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][13]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][13]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][13]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][13]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][13]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][13]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][13]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][13]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][12]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][12]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][12]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][12]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][12]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][12]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][12]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][12]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][11]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][11]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][11]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][11]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][11]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][11]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][11]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][11]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][10]                 ; Lost fanout                                 ;
+; regs:inst3|regs[14][10]                 ; Lost fanout                                 ;
+; regs:inst3|regs[11][10]                 ; Lost fanout                                 ;
+; regs:inst3|regs[15][10]                 ; Lost fanout                                 ;
+; regs:inst3|regs[8][10]                  ; Lost fanout                                 ;
+; regs:inst3|regs[12][10]                 ; Lost fanout                                 ;
+; regs:inst3|regs[9][10]                  ; Lost fanout                                 ;
+; regs:inst3|regs[13][10]                 ; Lost fanout                                 ;
+; regs:inst3|regs[10][9]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][9]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][9]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][9]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][9]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][9]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][9]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][9]                  ; Lost fanout                                 ;
+; regs:inst3|regs[10][8]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][8]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][8]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][8]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][8]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][8]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][8]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][8]                  ; Lost fanout                                 ;
+; regs:inst3|regs[10][7]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][7]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][7]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][7]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][7]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][7]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][7]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][7]                  ; Lost fanout                                 ;
+; regs:inst3|regs[10][6]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][6]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][6]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][6]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][6]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][6]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][6]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][6]                  ; Lost fanout                                 ;
+; regs:inst3|regs[10][5]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][5]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][5]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][5]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][5]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][5]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][5]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][5]                  ; Lost fanout                                 ;
+; regs:inst3|regs[10][4]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][4]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][4]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][4]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][4]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][4]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][4]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][4]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][3]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][3]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][3]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][3]                  ; Lost fanout                                 ;
+; regs:inst3|regs[10][3]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][3]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][3]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][3]                  ; Lost fanout                                 ;
+; regs:inst3|regs[10][2]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][2]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][2]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][2]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][2]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][2]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][2]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][2]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][1]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][1]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][1]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][1]                  ; Lost fanout                                 ;
+; regs:inst3|regs[10][1]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][1]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][1]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][1]                  ; Lost fanout                                 ;
+; regs:inst3|regs[8][0]                   ; Lost fanout                                 ;
+; regs:inst3|regs[12][0]                  ; Lost fanout                                 ;
+; regs:inst3|regs[9][0]                   ; Lost fanout                                 ;
+; regs:inst3|regs[13][0]                  ; Lost fanout                                 ;
+; regs:inst3|regs[10][0]                  ; Lost fanout                                 ;
+; regs:inst3|regs[14][0]                  ; Lost fanout                                 ;
+; regs:inst3|regs[11][0]                  ; Lost fanout                                 ;
+; regs:inst3|regs[15][0]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][31]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][31]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][31]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][30]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][30]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][30]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][29]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][29]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][29]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][28]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][28]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][28]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][27]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][27]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][27]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][26]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][26]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][26]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][25]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][25]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][25]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][24]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][24]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][24]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][23]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][23]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][23]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][22]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][22]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][22]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][21]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][21]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][21]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][20]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][20]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][20]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][19]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][19]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][19]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][18]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][18]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][18]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][17]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][17]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][17]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][16]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][16]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][16]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][15]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][15]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][15]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][14]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][14]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][14]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][13]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][13]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][13]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][12]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][12]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][12]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][11]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][11]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][11]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][10]                  ; Lost fanout                                 ;
+; regs:inst3|regs[3][10]                  ; Lost fanout                                 ;
+; regs:inst3|regs[7][10]                  ; Lost fanout                                 ;
+; regs:inst3|regs[2][9]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][9]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][9]                   ; Lost fanout                                 ;
+; regs:inst3|regs[2][8]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][8]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][8]                   ; Lost fanout                                 ;
+; regs:inst3|regs[2][7]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][7]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][7]                   ; Lost fanout                                 ;
+; regs:inst3|regs[2][6]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][6]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][6]                   ; Lost fanout                                 ;
+; regs:inst3|regs[2][5]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][5]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][5]                   ; Lost fanout                                 ;
+; regs:inst3|regs[2][4]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][4]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][4]                   ; Lost fanout                                 ;
+; regs:inst3|regs[2][3]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][3]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][3]                   ; Lost fanout                                 ;
+; regs:inst3|regs[2][2]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][2]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][2]                   ; Lost fanout                                 ;
+; regs:inst3|regs[2][1]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][1]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][1]                   ; Lost fanout                                 ;
+; regs:inst3|regs[2][0]                   ; Lost fanout                                 ;
+; regs:inst3|regs[3][0]                   ; Lost fanout                                 ;
+; regs:inst3|regs[7][0]                   ; Lost fanout                                 ;
+; Total Number of Removed Registers = 897 ;                                             ;
++-----------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                           ;
++-------------------------+--------------------------------+----------------------------------------------------------------------------+
+; Register name           ; Reason for Removal             ; Registers Removed due to This Register                                     ;
++-------------------------+--------------------------------+----------------------------------------------------------------------------+
+; pc_reg:inst2|curr_pc[0] ; Stuck at GND                   ; regs:inst3|regs[31][31], regs:inst3|regs[31][30], regs:inst3|regs[31][29], ;
+;                         ; due to stuck port data_in      ; regs:inst3|regs[31][28], regs:inst3|regs[31][27], regs:inst3|regs[31][26], ;
+;                         ;                                ; regs:inst3|regs[31][25], regs:inst3|regs[30][30], regs:inst3|regs[30][29], ;
+;                         ;                                ; regs:inst3|regs[30][28], regs:inst3|regs[30][27], regs:inst3|regs[30][23], ;
+;                         ;                                ; regs:inst3|regs[27][20], regs:inst3|regs[2][31], regs:inst3|regs[3][31],   ;
+;                         ;                                ; regs:inst3|regs[2][30], regs:inst3|regs[3][30], regs:inst3|regs[2][29],    ;
+;                         ;                                ; regs:inst3|regs[3][29], regs:inst3|regs[2][28], regs:inst3|regs[3][28],    ;
+;                         ;                                ; regs:inst3|regs[2][27], regs:inst3|regs[3][27], regs:inst3|regs[2][26],    ;
+;                         ;                                ; regs:inst3|regs[3][26], regs:inst3|regs[2][25], regs:inst3|regs[3][25]     ;
+; regs:inst3|regs[31][24] ; Stuck at GND                   ; regs:inst3|regs[30][31], regs:inst3|regs[2][24], regs:inst3|regs[3][24]    ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][0]  ; Stuck at GND                   ; regs:inst3|regs[29][22], regs:inst3|regs[2][0], regs:inst3|regs[3][0]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][22] ; Stuck at GND                   ; regs:inst3|regs[29][0], regs:inst3|regs[2][22], regs:inst3|regs[3][22]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][21] ; Stuck at GND                   ; regs:inst3|regs[29][1], regs:inst3|regs[2][21], regs:inst3|regs[3][21]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][20] ; Stuck at GND                   ; regs:inst3|regs[29][2], regs:inst3|regs[2][20], regs:inst3|regs[3][20]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][19] ; Stuck at GND                   ; regs:inst3|regs[29][3], regs:inst3|regs[2][19], regs:inst3|regs[3][19]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][18] ; Stuck at GND                   ; regs:inst3|regs[29][4], regs:inst3|regs[2][18], regs:inst3|regs[3][18]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][17] ; Stuck at GND                   ; regs:inst3|regs[29][5], regs:inst3|regs[2][17], regs:inst3|regs[3][17]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][16] ; Stuck at GND                   ; regs:inst3|regs[29][6], regs:inst3|regs[2][16], regs:inst3|regs[3][16]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][15] ; Stuck at GND                   ; regs:inst3|regs[29][7], regs:inst3|regs[2][15], regs:inst3|regs[3][15]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][14] ; Stuck at GND                   ; regs:inst3|regs[29][8], regs:inst3|regs[2][14], regs:inst3|regs[3][14]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][13] ; Stuck at GND                   ; regs:inst3|regs[29][9], regs:inst3|regs[2][13], regs:inst3|regs[3][13]     ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][12] ; Stuck at GND                   ; regs:inst3|regs[29][10], regs:inst3|regs[2][12], regs:inst3|regs[3][12]    ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][11] ; Stuck at GND                   ; regs:inst3|regs[29][11], regs:inst3|regs[2][11], regs:inst3|regs[3][11]    ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][10] ; Stuck at GND                   ; regs:inst3|regs[29][12], regs:inst3|regs[2][10], regs:inst3|regs[3][10]    ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][9]  ; Stuck at GND                   ; regs:inst3|regs[29][13], regs:inst3|regs[2][9], regs:inst3|regs[3][9]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][8]  ; Stuck at GND                   ; regs:inst3|regs[29][14], regs:inst3|regs[2][8], regs:inst3|regs[3][8]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][7]  ; Stuck at GND                   ; regs:inst3|regs[29][15], regs:inst3|regs[2][7], regs:inst3|regs[3][7]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][6]  ; Stuck at GND                   ; regs:inst3|regs[29][16], regs:inst3|regs[2][6], regs:inst3|regs[3][6]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][5]  ; Stuck at GND                   ; regs:inst3|regs[29][17], regs:inst3|regs[2][5], regs:inst3|regs[3][5]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][4]  ; Stuck at GND                   ; regs:inst3|regs[29][18], regs:inst3|regs[2][4], regs:inst3|regs[3][4]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][3]  ; Stuck at GND                   ; regs:inst3|regs[29][19], regs:inst3|regs[2][3], regs:inst3|regs[3][3]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][2]  ; Stuck at GND                   ; regs:inst3|regs[29][20], regs:inst3|regs[2][2], regs:inst3|regs[3][2]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][1]  ; Stuck at GND                   ; regs:inst3|regs[29][21], regs:inst3|regs[2][1], regs:inst3|regs[3][1]      ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[31][23] ; Stuck at GND                   ; regs:inst3|regs[2][23], regs:inst3|regs[3][23]                             ;
+;                         ; due to stuck port clock_enable ;                                                                            ;
+; regs:inst3|regs[0][31]  ; Stuck at GND                   ; regs:inst3|regs[10][31], regs:inst3|regs[14][31]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][30]  ; Stuck at GND                   ; regs:inst3|regs[10][30], regs:inst3|regs[14][30]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][29]  ; Stuck at GND                   ; regs:inst3|regs[10][29], regs:inst3|regs[14][29]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][28]  ; Stuck at GND                   ; regs:inst3|regs[10][28], regs:inst3|regs[14][28]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][27]  ; Stuck at GND                   ; regs:inst3|regs[10][27], regs:inst3|regs[14][27]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][26]  ; Stuck at GND                   ; regs:inst3|regs[10][26], regs:inst3|regs[14][26]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][25]  ; Stuck at GND                   ; regs:inst3|regs[10][25], regs:inst3|regs[14][25]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][24]  ; Stuck at GND                   ; regs:inst3|regs[10][24], regs:inst3|regs[14][24]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][23]  ; Stuck at GND                   ; regs:inst3|regs[10][23], regs:inst3|regs[14][23]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][22]  ; Stuck at GND                   ; regs:inst3|regs[10][22], regs:inst3|regs[14][22]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][21]  ; Stuck at GND                   ; regs:inst3|regs[10][21], regs:inst3|regs[14][21]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][20]  ; Stuck at GND                   ; regs:inst3|regs[10][20], regs:inst3|regs[14][20]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][19]  ; Stuck at GND                   ; regs:inst3|regs[10][19], regs:inst3|regs[14][19]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][18]  ; Stuck at GND                   ; regs:inst3|regs[10][18], regs:inst3|regs[14][18]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][17]  ; Stuck at GND                   ; regs:inst3|regs[10][17], regs:inst3|regs[14][17]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][16]  ; Stuck at GND                   ; regs:inst3|regs[10][16], regs:inst3|regs[14][16]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][15]  ; Stuck at GND                   ; regs:inst3|regs[10][15], regs:inst3|regs[14][15]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][14]  ; Stuck at GND                   ; regs:inst3|regs[10][14], regs:inst3|regs[14][14]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][13]  ; Stuck at GND                   ; regs:inst3|regs[10][13], regs:inst3|regs[14][13]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][12]  ; Stuck at GND                   ; regs:inst3|regs[10][12], regs:inst3|regs[14][12]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][11]  ; Stuck at GND                   ; regs:inst3|regs[10][11], regs:inst3|regs[14][11]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][10]  ; Stuck at GND                   ; regs:inst3|regs[10][10], regs:inst3|regs[14][10]                           ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][9]   ; Stuck at GND                   ; regs:inst3|regs[10][9], regs:inst3|regs[14][9]                             ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][8]   ; Stuck at GND                   ; regs:inst3|regs[10][8], regs:inst3|regs[14][8]                             ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][7]   ; Stuck at GND                   ; regs:inst3|regs[10][7], regs:inst3|regs[14][7]                             ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][6]   ; Stuck at GND                   ; regs:inst3|regs[10][6], regs:inst3|regs[14][6]                             ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][5]   ; Stuck at GND                   ; regs:inst3|regs[10][5], regs:inst3|regs[14][5]                             ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][4]   ; Stuck at GND                   ; regs:inst3|regs[10][4], regs:inst3|regs[14][4]                             ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][2]   ; Stuck at GND                   ; regs:inst3|regs[10][2], regs:inst3|regs[14][2]                             ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][3]   ; Stuck at GND                   ; regs:inst3|regs[8][3]                                                      ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][1]   ; Stuck at GND                   ; regs:inst3|regs[8][1]                                                      ;
+;                         ; due to stuck port data_in      ;                                                                            ;
+; regs:inst3|regs[0][0]   ; Stuck at GND                   ; regs:inst3|regs[8][0]                                                      ;
+;                         ; due to stuck port data_in      ;                                                                            ;
++-------------------------+--------------------------------+----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 160   ;
+; Number of registers using Synchronous Clear  ; 128   ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 158   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[0][30]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[4][19]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[1][27]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[5][1]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[2][13]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[6][21]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[3][22]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[7][4]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[8][7]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[12][29]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[9][20]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[13][18]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[10][13]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[14][13]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[11][1]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |RISC|regs:inst3|regs[15][8]    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |RISC|inst_id:inst5|Selector150 ;
+; 3:1                ; 40 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |RISC|ex:inst9|Selector113      ;
+; 13:1               ; 32 bits   ; 256 LEs       ; 224 LEs              ; 32 LEs                 ; No         ; |RISC|inst_id:inst5|Selector141 ;
+; 21:1               ; 29 bits   ; 406 LEs       ; 406 LEs              ; 0 LEs                  ; No         ; |RISC|inst_id:inst5|Selector26  ;
+; 26:1               ; 3 bits    ; 51 LEs        ; 48 LEs               ; 3 LEs                  ; No         ; |RISC|inst_id:inst5|Selector16  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 160                         ;
+;     CLR               ; 2                           ;
+;     ENA CLR SLD       ; 30                          ;
+;     ENA SCLR          ; 128                         ;
+; arriav_lcell_comb     ; 349                         ;
+;     arith             ; 93                          ;
+;         1 data inputs ; 57                          ;
+;         2 data inputs ; 5                           ;
+;         5 data inputs ; 31                          ;
+;     normal            ; 256                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 71                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 16                          ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 86                          ;
+; boundary_port         ; 212                         ;
+;                       ;                             ;
+; Max LUT depth         ; 10.10                       ;
+; Average LUT depth     ; 6.39                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Sun May 01 11:51:51 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISC -c RISC
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file risc.bdf
+    Info (12023): Found entity 1: RISC
+Info (12127): Elaborating entity "RISC" for the top level hierarchy
+Warning (12125): Using design file pc_reg.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: pc_reg File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 1
+Info (12128): Elaborating entity "pc_reg" for hierarchy "pc_reg:inst2"
+Warning (12125): Using design file mux_pc.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: mux_pc File: D:/intelFPGA_lite/17.1/MCU/RISC/mux_pc.v Line: 1
+Info (12128): Elaborating entity "mux_pc" for hierarchy "mux_pc:inst10"
+Warning (12125): Using design file ex.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ex File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 1
+Info (12128): Elaborating entity "ex" for hierarchy "ex:inst9"
+Warning (10036): Verilog HDL or VHDL warning at ex.v(18): object "rd" assigned a value but never read File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 18
+Warning (10036): Verilog HDL or VHDL warning at ex.v(20): object "rs1" assigned a value but never read File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 20
+Warning (10036): Verilog HDL or VHDL warning at ex.v(21): object "rs2" assigned a value but never read File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 21
+Warning (10036): Verilog HDL or VHDL warning at ex.v(22): object "imm" assigned a value but never read File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 22
+Warning (10230): Verilog HDL assignment warning at ex.v(33): truncated value with size 33 to match size of target (32) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 33
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "rd_data_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "rd_addr_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "rd_write_en", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "jump_addr_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "jump_en_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at ex.v(39): inferring latch(es) for variable "hold_flag_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "hold_flag_o" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_en_o" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[0]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[1]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[2]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[3]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[4]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[5]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[6]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[7]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[8]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[9]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[10]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[11]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[12]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[13]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[14]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[15]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[16]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[17]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[18]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[19]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[20]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[21]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[22]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[23]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[24]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[25]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[26]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[27]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[28]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[29]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[30]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "jump_addr_o[31]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_write_en" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[0]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[1]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[2]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[3]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_addr_o[4]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[0]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[1]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[2]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[3]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[4]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[5]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[6]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[7]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[8]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[9]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[10]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[11]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[12]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[13]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[14]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[15]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[16]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[17]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[18]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[19]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[20]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[21]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[22]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[23]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[24]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[25]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[26]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[27]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[28]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[29]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[30]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Info (10041): Inferred latch for "rd_data_o[31]" at ex.v(39) File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (12125): Using design file inst_id.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: inst_id File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 1
+Info (12128): Elaborating entity "inst_id" for hierarchy "inst_id:inst5"
+Warning (10240): Verilog HDL Always Construct warning at inst_id.v(33): inferring latch(es) for variable "rs1_addr_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (10240): Verilog HDL Always Construct warning at inst_id.v(33): inferring latch(es) for variable "rs2_addr_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (10240): Verilog HDL Always Construct warning at inst_id.v(33): inferring latch(es) for variable "op1_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (10240): Verilog HDL Always Construct warning at inst_id.v(33): inferring latch(es) for variable "op2_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (10240): Verilog HDL Always Construct warning at inst_id.v(33): inferring latch(es) for variable "rd_addr_o", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (10240): Verilog HDL Always Construct warning at inst_id.v(33): inferring latch(es) for variable "rd_write_en", which holds its previous value in one or more paths through the always construct File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rd_write_en" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rd_addr_o[0]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rd_addr_o[1]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rd_addr_o[2]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rd_addr_o[3]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rd_addr_o[4]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[0]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[1]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[2]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[3]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[4]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[5]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[6]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[7]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[8]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[9]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[10]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[11]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[12]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[13]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[14]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[15]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[16]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[17]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[18]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[19]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[20]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[21]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[22]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[23]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[24]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[25]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[26]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[27]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[28]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[29]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[30]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op2_o[31]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[0]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[1]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[2]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[3]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[4]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[5]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[6]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[7]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[8]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[9]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[10]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[11]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[12]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[13]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[14]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[15]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[16]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[17]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[18]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[19]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[20]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[21]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[22]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[23]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[24]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[25]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[26]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[27]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[28]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[29]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[30]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "op1_o[31]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs2_addr_o[0]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs2_addr_o[1]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs2_addr_o[2]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs2_addr_o[3]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs2_addr_o[4]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs1_addr_o[0]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs1_addr_o[1]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs1_addr_o[2]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs1_addr_o[3]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Info (10041): Inferred latch for "rs1_addr_o[4]" at inst_id.v(33) File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (12125): Using design file rom.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: rom File: D:/intelFPGA_lite/17.1/MCU/RISC/rom.v Line: 1
+Info (12128): Elaborating entity "rom" for hierarchy "rom:inst"
+Warning (10030): Net "memory.data_a" at rom.v(5) has no driver or initial value, using a default initial value '0' File: D:/intelFPGA_lite/17.1/MCU/RISC/rom.v Line: 5
+Warning (10030): Net "memory.waddr_a" at rom.v(5) has no driver or initial value, using a default initial value '0' File: D:/intelFPGA_lite/17.1/MCU/RISC/rom.v Line: 5
+Warning (10030): Net "memory.we_a" at rom.v(5) has no driver or initial value, using a default initial value '0' File: D:/intelFPGA_lite/17.1/MCU/RISC/rom.v Line: 5
+Warning (12125): Using design file regs.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: regs File: D:/intelFPGA_lite/17.1/MCU/RISC/regs.v Line: 1
+Info (12128): Elaborating entity "regs" for hierarchy "regs:inst3"
+Warning (10855): Verilog HDL warning at regs.v(20): initial value for variable regs should be constant File: D:/intelFPGA_lite/17.1/MCU/RISC/regs.v Line: 20
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/intelFPGA_lite/17.1/MCU/RISC/db/RISC.ram0_rom_1d582.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (14026): LATCH primitive "inst_id:inst5|rd_addr_o[0]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rd_addr_o[1]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rd_addr_o[2]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rd_addr_o[3]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rd_addr_o[4]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[0]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[1]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[2]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[3]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[4]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[5]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[6]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[7]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[8]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[9]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[10]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[11]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[12]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[13]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[14]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[15]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[16]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[17]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[18]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[19]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[20]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[21]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[22]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[23]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[24]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[25]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[26]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[27]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[28]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[29]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[30]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op2_o[31]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[0]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[1]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[2]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[3]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[4]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[5]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[6]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[7]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[8]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[9]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[10]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[11]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[12]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[13]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[14]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[15]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[16]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[17]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[18]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[19]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[20]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[21]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[22]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[23]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[24]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[25]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[26]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[27]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[28]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[29]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[30]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|op1_o[31]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs2_addr_o[0]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs2_addr_o[1]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs2_addr_o[2]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs2_addr_o[3]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs2_addr_o[4]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs1_addr_o[0]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs1_addr_o[1]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs1_addr_o[2]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs1_addr_o[3]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "inst_id:inst5|rs1_addr_o[4]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/inst_id.v Line: 33
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[15]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[14]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[13]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[12]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[11]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[10]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[9]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[8]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[7]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[6]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[5]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[4]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[3]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[2]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[1]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[0]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_en_o" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 13
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[17]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[18]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[19]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[20]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[21]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[22]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[23]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[24]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[25]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[26]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[27]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[28]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[29]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[30]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[31]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (14026): LATCH primitive "ex:inst9|jump_addr_o[16]" is permanently enabled File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+Warning (13012): Latch ex:inst9|rd_data_o[0] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_write_en has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_addr_o[1] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_addr_o[3] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[9] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_addr_o[0] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_addr_o[2] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[9] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[1] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[2] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[3] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[4] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[5] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[6] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[7] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[8] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[9] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[10] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[11] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[12] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[13] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[14] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[15] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[16] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[17] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[18] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[19] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[20] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[21] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[22] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[23] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[24] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[25] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[26] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[27] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[28] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[29] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[30] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13012): Latch ex:inst9|rd_data_o[31] has unsafe behavior File: D:/intelFPGA_lite/17.1/MCU/RISC/ex.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc_reg:inst2|curr_pc[5] File: D:/intelFPGA_lite/17.1/MCU/RISC/pc_reg.v Line: 21
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ins_o[31]" is stuck at GND
+    Warning (13410): Pin "ins_o[30]" is stuck at GND
+    Warning (13410): Pin "ins_o[29]" is stuck at GND
+    Warning (13410): Pin "ins_o[28]" is stuck at GND
+    Warning (13410): Pin "ins_o[27]" is stuck at GND
+    Warning (13410): Pin "ins_o[26]" is stuck at GND
+    Warning (13410): Pin "ins_o[25]" is stuck at GND
+    Warning (13410): Pin "ins_o[24]" is stuck at GND
+    Warning (13410): Pin "ins_o[19]" is stuck at GND
+    Warning (13410): Pin "ins_o[18]" is stuck at GND
+    Warning (13410): Pin "ins_o[16]" is stuck at GND
+    Warning (13410): Pin "ins_o[14]" is stuck at GND
+    Warning (13410): Pin "ins_o[13]" is stuck at GND
+    Warning (13410): Pin "ins_o[11]" is stuck at GND
+    Warning (13410): Pin "ins_o[3]" is stuck at GND
+    Warning (13410): Pin "ins_o[2]" is stuck at GND
+    Warning (13410): Pin "jump_addr_out[0]" is stuck at GND
+    Warning (13410): Pin "pc[0]" is stuck at GND
+    Warning (13410): Pin "rd_addr_o[4]" is stuck at GND
+    Warning (13410): Pin "rs1_addr_o[4]" is stuck at GND
+    Warning (13410): Pin "rs1_addr_o[3]" is stuck at GND
+    Warning (13410): Pin "rs1_addr_o[1]" is stuck at GND
+    Warning (13410): Pin "rs2_addr_o[4]" is stuck at GND
+    Warning (13410): Pin "rs2_addr_o[3]" is stuck at GND
+    Warning (13410): Pin "rs2_addr_o[0]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 352 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 689 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 209 output pins
+    Info (21061): Implemented 477 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 241 warnings
+    Info: Peak virtual memory: 4876 megabytes
+    Info: Processing ended: Sun May 01 11:51:59 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
+
+
